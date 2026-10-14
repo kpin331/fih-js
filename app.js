@@ -1,12 +1,8 @@
-const readline = require("readline");
-const ch = require("chalk")
+const exp = require("express");
+const app = exp();
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+app.get("/", (req, res) => {
+    res.send("hai");
 });
 
-rl.question("teks: ", (txt) => {
-    console.log(ch.red("hai"))
-    rl.close();
-})
+app.listen(3000, () => console.log("server berjalan"));
